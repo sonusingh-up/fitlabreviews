@@ -1,0 +1,84 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/all-reviews",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/all-ingredients",
+      "destination": "/ingredients",
+      "permanent": true
+    },
+    {
+      "source": "/all-compare",
+      "destination": "/compare",
+      "permanent": true
+    },
+    {
+      "source": "/best-of/:category",
+      "destination": "/best/:category",
+      "permanent": true
+    },
+    {
+      "source": "/best-of",
+      "destination": "/best",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/blog",
+      "permanent": false
+    }
+  ]
+}

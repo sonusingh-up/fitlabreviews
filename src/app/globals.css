@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { overflow-x: hidden; }
+
+  body {
+    margin: 0; padding: 0;
+    background-color: #F2EDE2;
+    color: #1A1A1A;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  ::selection { background-color: #1b4332; color: #fff; }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: "opsz" 96;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .font-serif-body {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: "opsz" 72;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* Skirt label */
+  .skirt {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #7A736B;
+  }
+
+  /* Accent em — forest green */
+  .hero-em {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #1b4332;
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 96;
+  }
+  .section-em {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #1b4332;
+    letter-spacing: -0.018em;
+    font-variation-settings: "opsz" 72;
+  }
+
+  /* Staggered page-load fade-up */
+  .reveal {
+    opacity: 0;
+    animation: fadeUp 0.65s cubic-bezier(.22,.7,.2,1) forwards;
+  }
+  .reveal-d1 { animation-delay: 0.05s; }
+  .reveal-d2 { animation-delay: 0.15s; }
+  .reveal-d3 { animation-delay: 0.25s; }
+  .reveal-d4 { animation-delay: 0.38s; }
+  .reveal-d5 { animation-delay: 0.50s; }
+
+  /* Float card entry */
+  .card-enter {
+    opacity: 0;
+    animation: fadeUp 0.7s cubic-bezier(.22,.7,.2,1) forwards;
+  }
+  .card-enter-d1 { animation-delay: 0.55s; }
+  .card-enter-d2 { animation-delay: 0.72s; }
+  .card-enter-d3 { animation-delay: 0.90s; }
+
+  /* Scroll-triggered reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s cubic-bezier(.22,.7,.2,1), transform 0.65s cubic-bezier(.22,.7,.2,1);
+  }
+  .scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ingredient card shimmer on hover */
+  .ing-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .ing-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .ing-shimmer:hover::after {
+    opacity: 1;
+    animation: shimmer 0.7s ease forwards;
+  }
+
+  /* Live dot pulse */
+  .live-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #2d6a4f;
+    animation: pulse2 2.5s ease-in-out infinite;
+  }
+
+  /* Scroll-hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+}
+
+/* Keyframe defs (used by non-Tailwind animations) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse2 {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%        { opacity: 0.5; transform: scale(1.25); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0px); }
+  50%        { transform: translateY(-8px); }
+}
+@keyframes bobSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%        { transform: translateY(-5px); }
+}
+@keyframes blobDrift {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  33%        { transform: scale(1.04) rotate(1.5deg); }
+  66%        { transform: scale(0.97) rotate(-1deg); }
+}
+@keyframes counterIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
