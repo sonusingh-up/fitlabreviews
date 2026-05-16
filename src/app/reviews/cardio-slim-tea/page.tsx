@@ -11,7 +11,7 @@ import CardioSlimTeaReview from './CardioSlimTeaReview'
 
 const SITE_URL      = 'https://fitlabreviews.com'
 const PAGE_URL      = `${SITE_URL}/reviews/cardio-slim-tea`
-const OG_IMAGE      = `${SITE_URL}/products/cardio-slimtea.webp`
+const OG_IMAGE      = `${SITE_URL}https://pub-cfbcca8550f5404f92083870525d6d19.r2.dev/ingredients/cardio-slim-tea.webp`
 
 export const metadata: Metadata = {
   title: 'Cardio Slim Tea Review (2026): 15 Ingredients, Doses Audited | Fitlab',
