@@ -924,7 +924,7 @@ export default function TLBulkBlackReview() {
                 <div className="space-y-3 mb-5">
                   {[
                     {
-                      name: 'TL BULK Black',
+                      name: 'Transparent Labs BULK',
                       subtitle: 'This review',
                       score: 9.1,
                       caffeine: '350mg (split)',
@@ -936,20 +936,6 @@ export default function TLBulkBlackReview() {
                       verdict: 'Every dose clinical. Best-in-class transparency and testing. Premium price justified.',
                       slug: '',
                       img: PRODUCT_IMG,
-                    },
-                    {
-                      name: 'Transparent Labs BULK',
-                      subtitle: 'Lower stimulant',
-                      score: 8.8,
-                      caffeine: '200mg',
-                      citrulline: '8,000mg',
-                      cert: 'Informed Choice',
-                      price: '$54.99 / 30',
-                      blend: 'None',
-                      current: false,
-                      verdict: 'Same core formula, no Alpha-GPC, lower caffeine. Better starting point for new users.',
-                      slug: '',
-                      img: '',
                     },
                     {
                       name: 'Legion Pulse',
