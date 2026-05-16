@@ -20,7 +20,7 @@ const PAGE_URL = `${SITE_URL}/reviews/c4-original-pre-workout-review-2026`
 const OG_IMAGE = 'https://pub-cfbcca8550f5404f92083870525d6d19.r2.dev/ingredients/c4-original-preworkout.webp'
 
 export const metadata: Metadata = {
-  title: 'Cellucor C4 Original Pre-Workout Review (2026): Formula & Doses Audited | Fitlab',
+  title: 'Cellucor C4 Original Pre-Workout Review (2026): Formula & Doses Audited',
   description:
     "2026 formula audit: 200mg caffeine, 2g CarnoSyn beta-alanine (sub-clinical), 1g creatine nitrate (sub-clinical), Velox® 2.4g blend hides citrulline split. Score: 6.4/10. Here's exactly why.",
   alternates: { canonical: PAGE_URL },
