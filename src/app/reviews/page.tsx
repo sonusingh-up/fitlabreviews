@@ -5,9 +5,17 @@ import { products, extendedProducts } from '@/lib/data'
 const SITE_URL = 'https://fitlabreviews.com'
 
 export const metadata = {
-  title: 'All Supplement Reviews',
-  description: 'Every supplement review on Fitlab — scored against a public rubric. Filter by category. Ranked by evidence, not margin.',
+  title: 'All Supplement Reviews (2026) | Fitlab Reviews',
+  description: 'Every supplement review on Fitlab — scored against a 5-criterion public rubric: clinical dose, ingredient form, purity, value, and label honesty. Ranked by evidence, not margin.',
   alternates: { canonical: `${SITE_URL}/reviews` },
+  openGraph: {
+    type:        'website',
+    url:         `${SITE_URL}/reviews`,
+    siteName:    'Fitlab Reviews',
+    title:       'All Supplement Reviews (2026) | Fitlab Reviews',
+    description: 'Every supplement on Fitlab scored against a public 5-criterion rubric. Ranked by evidence, not affiliate margin.',
+  },
+  robots: { index: true, follow: true },
 }
 
 const categories = ['All', 'Protein', 'Creatine', 'Pre-Workout']
