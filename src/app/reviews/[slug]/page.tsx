@@ -1,6 +1,20 @@
-import PageShell from '@/components/PageShell'
-import JsonLd from '@/components/JsonLd'
-import { getProduct, authors } from '@/lib/data'
+import { notFound }   from 'next/navigation'
+import PageShell      from '@/components/PageShell'
+import JsonLd         from '@/components/JsonLd'
+import { products, getProduct, authors } from '@/lib/data'
+
+// All slugs handled by dedicated pages — this catch-all only renders
+// products that exist in data.ts AND are in generateStaticParams.
+// Unknown slugs (e.g. /reviews/cardio-slim-tea) return 404 instead of
+// silently rendering the wrong product.
+const KNOWN_SLUGS = new Set([
+  'muscleblaze-biozyme-whey',
+  'asitis-whey-protein',
+  'asitis-creatine-monohydrate',
+  'muscleblaze-creatine',
+  'muscletech-vapor-x5',
+  'bigmuscles-freak',
+])
 
 const SITE_URL = 'https://fitlabreviews.com'
 
@@ -16,6 +30,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
+  if (!KNOWN_SLUGS.has(params.slug)) return { title: 'Review not found' }
   const p = getProduct(params.slug)
   const year = new Date().getFullYear()
   return {
@@ -46,6 +61,11 @@ const ScoreBar = ({ label, value }: { label: string; value: number }) => (
 )
 
 export default function ReviewPage({ params }: { params: { slug: string } }) {
+  // Guard: unknown slugs have their own dedicated page.tsx files.
+  // Without this, Next.js would silently render getProduct()'s fallback
+  // (products[0]) for any unrecognised slug.
+  if (!KNOWN_SLUGS.has(params.slug)) notFound()
+
   const p    = getProduct(params.slug)
   const auth = authors[0]
   const url  = `${SITE_URL}/reviews/${p.slug}`
