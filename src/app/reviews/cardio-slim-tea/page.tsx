@@ -445,7 +445,6 @@ export default function CardioSlimTeaReview() {
                         <div className="flex flex-wrap items-start justify-between gap-2 px-4 py-3 bg-paper3 border-b border-rule">
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-2 mb-1">
-                              <span className="font-serif-body text-[15px]" style={{ color: '#1b4332' }}>{ing.emoji}</span>
                               <span className="font-semibold text-[14px] text-ink2">{ing.name}</span>
                               <EvidenceBadge tier={ing.evidenceTier} />
                               <a href={ing.internalLink} className="text-[11px] text-clay hover:underline font-medium">Guide →</a>
@@ -454,7 +453,7 @@ export default function CardioSlimTeaReview() {
                           </div>
                           <span className="shrink-0 text-[11px] font-semibold rounded-full px-2.5 py-1"
                                 style={ing.formOk === true ? { background: '#1b433215', color: '#1b4332' } : ing.formOk === false ? { background: '#B95C3A15', color: '#B95C3A' } : { background: '#92702815', color: '#927028' }}>
-                            {ing.formOk === true ? '✓ Form: Good' : ing.formOk === false ? '— Form: Concern' : '? Form: Unspecified'}
+                            {ing.formOk === true ? 'Form: Good' : ing.formOk === false ? 'Form: Concern' : '? Form: Unspecified'}
                           </span>
                         </div>
                         <div className="px-4 py-4">
