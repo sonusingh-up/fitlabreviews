@@ -22,7 +22,7 @@ const PAGE_URL = `${SITE_URL}/reviews/transparent-labs-bulk-black-review`
 const OG_IMAGE = 'https://pub-cfbcca8550f5404f92083870525d6d19.r2.dev/ingredients/tl-bulk-black-preworkout.webp'
 
 export const metadata: Metadata = {
-  title: 'Transparent Labs BULK Black Review (2026): Dose Audit, COA & Pharmacist Notes | Fitlab',
+  title: 'Transparent Labs BULK Black Review (2026): Dose Audit, COA & Pharmacist Notes',
   description:
     '350mg caffeine stack broken down: 275mg anhydrous + 75mg Infinergy. 8 ingredients audited against clinical thresholds. COA verified. Informed Choice certified. Score: 9.1/10.',
   alternates: { canonical: PAGE_URL },
