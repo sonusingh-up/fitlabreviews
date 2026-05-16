@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: 'Fitlab Reviews',
     locale: 'en_US',
-    title: 'C4 Original Pre-Workout Review (2026): Formula & Doses Audited | Fitlab',
+    title: 'C4 Original Pre-Workout Review (2026): Formula & Doses Audited',
     description:
       "200mg caffeine ✓ · 2g beta-alanine (below clinical 3.2g threshold) · 1g creatine nitrate (well below 5g standard) · Velox® blend undisclosed split. Score: 6.4/10.",
     images: [
