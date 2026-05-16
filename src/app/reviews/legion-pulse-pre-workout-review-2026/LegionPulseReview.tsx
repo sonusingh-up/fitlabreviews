@@ -79,12 +79,8 @@ const productSchema = {
     dateModified: '2026-05-16',
     name: 'Legion Pulse Pre-Workout Review (2026): Labdoor Tested, All Doses Audited',
     reviewBody: 'Labdoor lot 2416421 (tested Sep–Oct 2025, released March 2026) found citrulline malate 9.2g vs 8g claimed, caffeine 380mg vs 350mg, L-theanine 410mg vs 350mg — every ingredient above label claim. Lead detected at 0.9μg/serving (USP limit 5μg). All microbiology pass. The 6-ingredient formula is genuinely clinically dosed. Main limitation: $2.75/serving is expensive and single-source caffeine at 350mg produces a sharper drop than dual-source designs. Score: 8.8/10.'
-    reviewRating: { '@type': 'Rating', ratingValue: '8.8', bestRating: '10', worstRating: '0' },
-    publisher: { '@type': 'Organization', name: 'Fitlab Reviews', url: SITE_URL },
-  },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '8.8', bestRating: '10', worstRating: '0', ratingCount: '1', reviewCount: '1' },
+   },
 }
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
