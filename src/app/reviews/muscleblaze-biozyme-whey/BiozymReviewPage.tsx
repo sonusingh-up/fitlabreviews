@@ -339,13 +339,15 @@ export default function BiozymReviewPage() {
               {/* Right — score card */}
               <div className="bg-paper3 border border-rule rounded-[14px] overflow-hidden w-full min-w-0">
                 {/* Product image */}
-                <div className="border-b border-rule flex items-center justify-center"
+                <div className="relative border-b border-rule flex items-center justify-center"
                      style={{ aspectRatio: '4/3', background: '#EDF5F0' }}>
-                  <div className="text-center px-6">
-                    <div className="w-20 h-28 mx-auto rounded-lg opacity-20 mb-3"
-                         style={{ background: 'linear-gradient(135deg,#D3CCBE,#1b433240)' }} />
-                    <p className="text-[11px] text-muted">Add /public/products/muscleblaze-biozyme-whey.webp</p>
-                  </div>
+                  <img
+                    src="/products/muscleblaze-biozyme-whey.webp"
+                    alt="MuscleBlaze Biozyme Performance Whey protein powder"
+                    className="h-full object-contain"
+                    style={{ maxHeight: '185px' }}
+                    onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+                  />
                 </div>
 
                 <div className="p-4 sm:p-5">
