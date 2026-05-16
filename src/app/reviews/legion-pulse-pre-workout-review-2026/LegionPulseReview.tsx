@@ -41,21 +41,44 @@ const SCORES = { clinicalDose: 9.2, ingredientForm: 8.8, purity: 9.4, value: 8.0
 
 // ── JSON-LD ───────────────────────────────────────────────────────────────────
 const productSchema = {
-  '@context': 'https://schema.org', '@type': 'Product',
+  '@context': 'https://schema.org',
+  '@type': 'Product',
   name: 'Legion Pulse Pre-Workout',
   brand: { '@type': 'Brand', name: 'Legion Athletics' },
   description: 'Naturally sweetened pre-workout with 6 clinically dosed ingredients: citrulline malate 8g, beta-alanine 3.6g (CarnoSyn), betaine 2.5g, caffeine 350mg, L-theanine 350mg, Alpha-GPC 300mg. No artificial sweeteners, colors, or dyes. Labdoor certified, ISO 17025 lab tested.',
   image: PRODUCT_IMG,
   offers: {
-    '@type': 'Offer', priceCurrency: 'USD', price: '54.99',
-    availability: 'https://schema.org/InStock', url: AFFILIATE_URL,
+    '@type': 'Offer',
+    priceCurrency: 'USD',
+    price: '54.99',
+    availability: 'https://schema.org/InStock',
+    url: AFFILIATE_URL,
+    // ── Shipping Details: Amazon Prime free shipping (standard) ──
+    shippingDetails: {
+      '@type': 'ShippingDeliveryTime',
+      shippingRate: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        price: '0.00', // Free with Amazon Prime
+      },
+      shippingLabel: 'Free Standard Shipping',
+      deliveryTime: {
+        '@type': 'QuantitativeValue',
+        unitCode: 'DAY',
+        minValue: 1,
+        maxValue: 2, // Typical Amazon Prime delivery
+      },
+    },
+    // ── Return Policy: Points to Amazon (you don't handle returns) ──
+    hasMerchantReturnPolicy: 'https://fitlabreviews.com/returns-policy',
   },
   review: {
     '@type': 'Review',
     author: { '@type': 'Person', name: 'Pankaj Singh', jobTitle: 'Pharmacist (Pharm.B)', url: `${SITE_URL}/authors#pankaj-singh` },
-    datePublished: '2026-05-16', dateModified: '2026-05-16',
+    datePublished: '2026-05-16',
+    dateModified: '2026-05-16',
     name: 'Legion Pulse Pre-Workout Review (2026): Labdoor Tested, All Doses Audited',
-    reviewBody: 'Labdoor lot 2416421 (tested Sep–Oct 2025, released March 2026) found citrulline malate 9.2g vs 8g claimed, caffeine 380mg vs 350mg, L-theanine 410mg vs 350mg — every ingredient above label claim. Lead detected at 0.9μg/serving (USP limit 5μg). All microbiology pass. The 6-ingredient formula is genuinely clinically dosed. Main limitation: $2.75/serving is expensive and single-source caffeine at 350mg produces a sharper drop than dual-source designs. Score: 8.8/10.',
+    reviewBody: 'Labdoor lot 2416421 (tested Sep–Oct 2025, released March 2026) found citrulline malate 9.2g vs 8g claimed, caffeine 380mg vs 350mg, L-theanine 410mg vs 350mg — every ingredient above label claim. Lead detected at 0.9μg/serving (USP limit 5μg). All microbiology pass. The 6-ingredient formula is genuinely clinically dosed. Main limitation: $2.75/serving is expensive and single-source caffeine at 350mg produces a sharper drop than dual-source designs. Score: 8.8/10.'
     reviewRating: { '@type': 'Rating', ratingValue: '8.8', bestRating: '10', worstRating: '0' },
     publisher: { '@type': 'Organization', name: 'Fitlab Reviews', url: SITE_URL },
   },
