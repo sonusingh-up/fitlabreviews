@@ -240,7 +240,7 @@ export default function CardioSlimTeaReview() {
                 <div className="relative border-b border-rule flex items-center justify-center"
                      style={{ aspectRatio: '4/3', background: 'linear-gradient(135deg,#0d1b12 0%,#1a3a22 50%,#0d2b1a 100%)' }}>
                   <img
-                       src="/products/cardio-slimtea.webp"
+                       src="https://pub-cfbcca8550f5404f92083870525d6d19.r2.dev/ingredients/cardio-slim-tea.webp"
                        alt="Cardio Slim Tea herbal tea bag pouch — Truth Leaves, 30 bags per box"
                        title="Cardio Slim Tea by Truth Leaves"
                        width="280" height="185"
