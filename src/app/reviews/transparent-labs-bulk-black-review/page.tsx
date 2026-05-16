@@ -6,7 +6,7 @@
  *                    "is Transparent Labs BULK Black worth it" / "BULK Black vs BULK"
  *
  * Title (58 chars):
- *   "Transparent Labs BULK Black Review (2026) | Fitlab"
+ *   "Transparent Labs BULK Black Review (2026)"
  *
  * Meta description (158 chars):
  *   Leads with what separates this review — full clinical dose audit,
